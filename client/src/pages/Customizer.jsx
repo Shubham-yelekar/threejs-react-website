@@ -15,6 +15,12 @@ const Customizer = () => {
 
   const snap = useState(state);
 
+  const [file, setFile] = useState(state);
+  const [prompt, setPrompt] = useState('');
+  const [generatingImg, setGeneratingImg] = useState(false)
+
+  
+
   return (
     <AnimatePresence>
       {!snap.intro && (

@@ -25,7 +25,6 @@ const CanvasModel = () => {
           <Center>
             <Shirt/>
           </Center>
-  
       </CameraRig>
 
     </Canvas>
