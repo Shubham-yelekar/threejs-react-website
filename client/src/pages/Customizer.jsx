@@ -19,7 +19,28 @@ const Customizer = () => {
   const [prompt, setPrompt] = useState('');
   const [generatingImg, setGeneratingImg] = useState(false)
 
-  
+  const [ActiveEditorTab, setActiveEditorTab] = useState('');
+  const [activeFilterTab, setActiveFilterTab] = useState({
+    logoShirt : true,
+    stylishShirt: false,
+  })
+
+  const generateTabContent = () => {
+    switch (ActiveEditorTab) {
+      case "colorpicker":
+        return <ColorPicker/>
+      
+      case "filepicker":
+        return <FilePicker/>
+
+      case "aipicker":
+        return <AIPicker/>
+      
+    
+      default:
+        return null;
+    }
+  }
 
   return (
     <AnimatePresence>
@@ -39,6 +60,8 @@ const Customizer = () => {
                     handleClick={() => setActiveEditorTab(tab.name)}
                   />
                 ))}
+
+              {generateTabContent()}
               </div>
             </div>
           </motion.div>
